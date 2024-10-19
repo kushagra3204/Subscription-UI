@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import BillingToggle from "./components/billingToggle/billingToggle";
+import SubscriptionCard from "./components/subscriptionCard/subscriptionCard";
+import "./App.css";
+import SubscriptionData from "./assets/subscriptionData";
+import { useState } from "react";
 
-function App() {
+const App = () => {
+
+  const [isYearly,setIsYearly] = useState(false);
+
+  function handleIsYearly(flag) {
+    setIsYearly(flag);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main-div">
+      <BillingToggle handleIsYearly={handleIsYearly} />
+        <div className="subscription-cards-div">
+          {SubscriptionData.map((subscription) => {
+            return (
+              <SubscriptionCard
+                key={subscription.id}
+                subscription = {subscription}
+                isFree = {subscription.isFree}
+                isPopular = {subscription.isPopular}
+                isYearly = {isYearly}
+                hasCredits = {subscription.hasCredits}
+              />
+            );
+          })}
+        </div>
     </div>
   );
 }
