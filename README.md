@@ -20,4 +20,4 @@
 
 Easy to change anything just from Subscription Data, we can select popular one just by turning flag on and it will adapt to the feature
 
-CSS is written in order of div with representation of div, sub-div, etc. Can open CSS file to preview the structure of code.
+CSS is written in order of div with representation of div, sub-div, etc. Can open CSS file to preview the structure of code. This site is both Mobile and Desktop Compatible and can be viewed from anything.
